@@ -1,5 +1,5 @@
-FROM node:13
-MAINTAINER Harald Nezbeda <HNezbeda@anexia-it.com>
+FROM node:15
+LABEL maintainer="HNezbeda@anexia-it.com"
 
 # Install system applications and libraries
 RUN apt-get update && \
@@ -20,5 +20,3 @@ RUN apt-get update && \
     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget && \
     apt-get clean && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
